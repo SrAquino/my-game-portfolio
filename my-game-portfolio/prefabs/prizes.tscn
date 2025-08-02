@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1wj1bv11s3c1"]
+
+[ext_resource type="PackedScene" uid="uid://beyed11oprg8u" path="res://assets/arcade/Models/GLB format/prizes.glb" id="1_qefwt"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="prizes2" parent="." instance=ExtResource("1_qefwt")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)

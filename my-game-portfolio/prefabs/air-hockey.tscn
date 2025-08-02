@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdfpll8wgkekj"]
+
+[ext_resource type="PackedScene" uid="uid://cjl4pl4kyqv8r" path="res://assets/arcade/Models/GLB format/air-hockey.glb" id="1_m56tf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m56tf"]
+size = Vector3(3, 2, 2)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="air-hockey2" parent="." instance=ExtResource("1_m56tf")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_m56tf")
