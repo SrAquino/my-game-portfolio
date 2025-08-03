@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1wj1bv11s3c1"]
+[gd_scene load_steps=3 format=3 uid="uid://b1wj1bv11s3c1"]
 
-[ext_resource type="PackedScene" uid="uid://beyed11oprg8u" path="res://assets/arcade/Models/GLB format/prizes.glb" id="1_qefwt"]
+[ext_resource type="PackedScene" uid="uid://beyed11oprg8u" path="res://assets/models/Arcade/prizes.glb" id="1_qefwt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qefwt"]
+size = Vector3(0.8, 0.8, 0.4)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="prizes2" parent="." instance=ExtResource("1_qefwt")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="prizes2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="prizes2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.408212, 0)
+shape = SubResource("BoxShape3D_qefwt")

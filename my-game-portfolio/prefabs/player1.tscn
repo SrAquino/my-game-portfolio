@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dljwxqb1qor4q"]
+
+[ext_resource type="Script" uid="uid://b1xh2sso3vx8m" path="res://scripts/character_body_3d.gd" id="1_weyph"]
+[ext_resource type="PackedScene" uid="uid://lsgrqk2wkq2m" path="res://assets/models/Characters/character-male-d.glb" id="2_ff45s"]
+[ext_resource type="Script" uid="uid://dd8hfi7q0ybl6" path="res://scripts/camera_pivot.gd" id="3_ff45s"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_71waf"]
+radius = 0.35
+height = 1.4
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("view") groups=["player"]]
+script = ExtResource("1_weyph")
+view = NodePath("../CameraPivot/Camera")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.0007, 0)
+shape = SubResource("CapsuleShape3D_71waf")
+
+[node name="character-male-d2" parent="CharacterBody3D" instance=ExtResource("2_ff45s")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="CameraPivot" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("3_ff45s")
+target = NodePath("../CharacterBody3D")
+
+[node name="Camera" type="Camera3D" parent="CameraPivot"]

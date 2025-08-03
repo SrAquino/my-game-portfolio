@@ -1,16 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdfpll8wgkekj"]
+[gd_scene load_steps=5 format=3 uid="uid://cdfpll8wgkekj"]
 
-[ext_resource type="PackedScene" uid="uid://cjl4pl4kyqv8r" path="res://assets/arcade/Models/GLB format/air-hockey.glb" id="1_m56tf"]
+[ext_resource type="PackedScene" uid="uid://cjl4pl4kyqv8r" path="res://assets/models/Arcade/air-hockey.glb" id="1_m56tf"]
+[ext_resource type="Script" uid="uid://c35sqpqc6xrou" path="res://scripts/air_hockey.gd" id="2_cj6qq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m56tf"]
-size = Vector3(3, 2, 2)
+size = Vector3(3, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cj6qq"]
+size = Vector3(1.5, 0.2, 0.5)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="air-hockey2" parent="." instance=ExtResource("1_m56tf")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="air-hockey2"]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="air-hockey2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.500249, 0)
 shape = SubResource("BoxShape3D_m56tf")
+
+[node name="Area3D" type="Area3D" parent="air-hockey2"]
+script = ExtResource("2_cj6qq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="air-hockey2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151591, 0)
+shape = SubResource("BoxShape3D_cj6qq")

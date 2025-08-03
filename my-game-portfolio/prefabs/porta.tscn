@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=4 uid="uid://bvlwanorm7o8g"]
 
 [ext_resource type="Script" uid="uid://youoonqdapxr" path="res://scripts/door_002_1.gd" id="1_gkj2c"]
-[ext_resource type="Texture2D" uid="uid://dbx60mibpi12k" path="res://assets/arquitetura/textures/WoodenDoor-animated_Baked.004_baseColor.jpeg" id="1_p1k0k"]
+[ext_resource type="Texture2D" uid="uid://dbx60mibpi12k" path="res://assets/models/Arquitetura/Porta/textures/WoodenDoor-animated_Baked.004_baseColor.jpeg" id="1_p1k0k"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p1k0k"]
 points = PackedVector3Array(0.721367, 1.66943, 0.234692, -0.897194, 0.100706, -0.068802, -0.897194, 0.100706, 0.0828559, -0.897194, 3.33829, -0.068802, 0.721367, 1.66943, -0.220594, 0.873362, 0.100706, -0.068802, 0.873362, 3.33829, -0.068802, -0.897194, 3.33829, 0.0828559, 0.873362, 3.33829, 0.0828559, 0.873362, 0.100706, 0.0828559, 0.519112, 1.51731, 0.234692, 0.519112, 1.51731, -0.220594, 0.721367, 1.4666, 0.234692, 0.569719, 1.4666, -0.220594, 0.569719, 1.66943, 0.234692, 0.569719, 1.66943, -0.220594, 0.569719, 1.4666, 0.234692, 0.519112, 1.61872, 0.234692, 0.519112, 1.61872, -0.220594)
@@ -186,7 +186,7 @@ _data = {
 &"4_open_left": SubResource("Animation_oqepr")
 }
 
-[node name="Sketchfab_Scene" type="Node3D"]
+[node name="door" type="Node3D"]
 
 [node name="Sketchfab_model" type="Node3D" parent="."]
 transform = Transform3D(0.896943, 0, 0, 0, 1.99161e-16, 0.896943, 0, -0.896943, 1.99161e-16, 0, 0, 0)
